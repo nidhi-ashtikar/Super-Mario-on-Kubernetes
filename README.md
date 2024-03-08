@@ -17,3 +17,16 @@
 
 
 
+<h3 align="left">*STEP 1: Launch Ubuntu instance</h3>
+
+<h3 align="left">*STEP 2: Create IAM role</h3>
+
+<h5 align="left">    -Click on Create Role</h5>
+<h5 align="left">    -Use case as EC2 and click on Next</h5>
+<h5 align="left">    -For permission policy select Administrator Access (Just for learning purpose), click Next</h5>
+<h5 align="left">    -Provide a Name for Role and click on Create role</h5>
+
+<h3 align="left">*STEP 3: Now Attach this role to Ec2 instance that we created earlier, so we can provision cluster from that instance.</h3>
+<h5 align="left">    -Click on Actions –> Security –> Modify IAM role</h5>
+<h5 align="left">    -Select the Role that created earlier and click on Update IAM role</h5>
+
