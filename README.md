@@ -26,7 +26,40 @@
 <h5 align="left">    -For permission policy select Administrator Access (Just for learning purpose), click Next</h5>
 <h5 align="left">    -Provide a Name for Role and click on Create role</h5>
 
-<h3 align="left">*STEP 3: Now Attach this role to Ec2 instance that we created earlier, so we can provision cluster from that instance.</h3>
+<h3 align="left">*STEP 3: Now Attach this role to Ec2 instance that we created earlier, so we can provision cluster from that instance</h3>
 <h5 align="left">    -Click on Actions –> Security –> Modify IAM role</h5>
 <h5 align="left">    -Select the Role that created earlier and click on Update IAM role</h5>
+
+
+
+<h3 align="left">*STEP 4: STEP 3: Cluster provision</h3>
+<h5 align="left"> git clone https://github.com/nidhi-ashtikar/Super-Mario-on-Kubernetes.git</h5>
+<h5 align="left"> cd Super-Mario-on-Kubernetes </h5>
+<h5 align="left"> sudo chmod +x script.sh</h5>
+<h5 align="left"> ./script.sh</h5>
+<h5 align="left">This script will install Terraform, AWS cli, Kubectl, Docker </h5>
+
+
+<h3 align="left">*STEP 5: Run Terraform init  </h3>
+<h5 align="left"> cd Terraform </h5>
+<h5 align="left"> terraform init</h5>
+<h5 align="left"> terraform validate </h5>
+<h5 align="left"> terraform plan </h5>
+<h5 align="left"> terraform apply  </h5>
+
+
+
+<h3 align="left">*STEP 6: Update the Kubernetes configuration </h3>
+<h5 align="left"> aws eks update-kubeconfig --name <EKS_NAME> --region us-east-1 </h5>
+<h5 align="left"> Now change directory back to Super-Mario-on-Kubernetes </h5>
+<h5 align="left"> Deployment- kubectl apply -f deployment.yaml </h5>
+<h5 align="left">Service - kubectl apply -f service.yaml </h5>
+
+
+<h3 align="left">*STEP 7: Now let’s describe the service and copy the LoadBalancer Ingress </h3>
+
+<h5 align="left"> kubectl describe service mario-service </h5>
+<h5 align="left"> Paste the ingress link in a browser and you will see the Mario game. </h5>
+
+<h2 align="left"> Let’s Go back to 1985 and play the game like children.</h2>
 
